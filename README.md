@@ -1,6 +1,11 @@
+
 # Food Finder App in React Native
 
 This repository is based on my YouTube tutorial series where I'm creating a complete app UI by using different essential react native packages which is useful for creating any kind of app.
+
+Generate Release Keystore,
+	keytool -genkey -v -keystore release.keystore -alias release-com -keyalg RSA -keysize 2048 -validity 10000
+	password: release-com
 
 ## Packages Used
 - [React Navigation](https://reactnavigation.org/)
