@@ -112,6 +112,17 @@ export function DrawerContent(props) {
                             label="Support"
                             onPress={() => {props.navigation.navigate('SupportScreen')}}
                         />
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="library" 
+                                color={color}
+                                size={size}
+                                />
+                            )}
+                            label="Our Services"
+                            onPress={() => {props.navigation.navigate('ServicesScreen')}}
+                        />
                     </Drawer.Section>
                     <Drawer.Section title="Preferences">
                         <TouchableRipple onPress={() => {toggleTheme()}}>
