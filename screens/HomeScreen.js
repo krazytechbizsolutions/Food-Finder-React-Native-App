@@ -31,21 +31,42 @@ const HomeScreen = ({navigation}) => {
           activeDotColor="#FF6347">
           <View style={styles.slide}>
             <Image
-              source={require('../assets/banners/food-banner1.jpg')}
+              source={require('../assets/banners/arb1.jpg')}
               resizeMode="cover"
               style={styles.sliderImage}
             />
           </View>
           <View style={styles.slide}>
             <Image
-              source={require('../assets/banners/food-banner2.jpg')}
+              source={require('../assets/banners/bak1.jpg')}
               resizeMode="cover"
               style={styles.sliderImage}
             />
           </View>
           <View style={styles.slide}>
             <Image
-              source={require('../assets/banners/food-banner3.jpg')}
+              source={require('../assets/banners/arb2.jpg')}
+              resizeMode="cover"
+              style={styles.sliderImage}
+            />
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require('../assets/banners/bak2.jpg')}
+              resizeMode="cover"
+              style={styles.sliderImage}
+            />
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require('../assets/banners/arb3.jpg')}
+              resizeMode="cover"
+              style={styles.sliderImage}
+            />
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require('../assets/banners/bak3.jpg')}
               resizeMode="cover"
               style={styles.sliderImage}
             />
@@ -67,7 +88,7 @@ const HomeScreen = ({navigation}) => {
         <TouchableOpacity
           style={styles.categoryBtn}
           onPress={() =>
-            navigation.navigate('CardListScreen', {title: 'Fastfood Center'})
+            navigation.navigate('CardListScreen', {title: 'Bakery'})
           }>
           <View style={styles.categoryIcon}>
             <MaterialCommunityIcons
@@ -76,16 +97,16 @@ const HomeScreen = ({navigation}) => {
               color="#FF6347"
             />
           </View>
-          <Text style={styles.categoryBtnTxt}>Fastfood Center</Text>
+          <Text style={styles.categoryBtnTxt}>Bakery</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.categoryBtn} onPress={() => navigation.navigate('ServicesScreen')}>
           <View style={styles.categoryIcon}>
             <MaterialCommunityIcons name="food" size={35} color="#FF6347" />
           </View>
-          <Text style={styles.categoryBtnTxt}>Snacks Corner</Text>
+          <Text style={styles.categoryBtnTxt}>Al Sumood Group</Text>
         </TouchableOpacity>
       </View>
-      <View style={[styles.categoryContainer, {marginTop: 10}]}>
+      {/* <View style={[styles.categoryContainer, {marginTop: 10}]}>
         <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
           <View style={styles.categoryIcon}>
             <Fontisto name="hotel" size={35} color="#FF6347" />
@@ -104,7 +125,7 @@ const HomeScreen = ({navigation}) => {
           </View>
           <Text style={styles.categoryBtnTxt}>Show More</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       <View style={styles.cardsWrapper}>
         <Text
@@ -119,7 +140,7 @@ const HomeScreen = ({navigation}) => {
         <View style={styles.card}>
           <View style={styles.cardImgWrapper}>
             <Image
-              source={require('../assets/banners/food-banner2.jpg')}
+              source={require('../assets/banners/arb1.jpg')}
               resizeMode="cover"
               style={styles.cardImg}
             />
@@ -135,7 +156,7 @@ const HomeScreen = ({navigation}) => {
         <View style={styles.card}>
           <View style={styles.cardImgWrapper}>
             <Image
-              source={require('../assets/banners/food-banner3.jpg')}
+              source={require('../assets/banners/arb2.jpg')}
               resizeMode="cover"
               style={styles.cardImg}
             />
@@ -151,7 +172,7 @@ const HomeScreen = ({navigation}) => {
         <View style={styles.card}>
           <View style={styles.cardImgWrapper}>
             <Image
-              source={require('../assets/banners/food-banner4.jpg')}
+              source={require('../assets/banners/arb3.jpg')}
               resizeMode="cover"
               style={styles.cardImg}
             />
@@ -216,8 +237,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    width: 70,
-    height: 70,
+    width: 100,
+    height: 100,
     backgroundColor: '#fdeae7' /* '#FF6347' */,
     borderRadius: 50,
   },

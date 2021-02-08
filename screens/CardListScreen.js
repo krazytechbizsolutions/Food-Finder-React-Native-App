@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
 import {data} from '../model/data';
+import {bakerydata} from '../model/bakerydata';
 import Card from '../components/Card';
 
-const CardListScreen = ({navigation}) => {
+const CardListScreen = ({navigation, route}) => {
 
     const renderItem = ({item}) => {
         return (
@@ -14,10 +15,13 @@ const CardListScreen = ({navigation}) => {
         );
     };
 
+    let listData = data;
+    if(route.params.title == 'Bakery')
+      listData = bakerydata;
     return (
       <View style={styles.container}>
         <FlatList 
-            data={data}
+            data={listData}
             renderItem={renderItem}
             keyExtractor={item => item.id}
         />

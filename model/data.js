@@ -113,3 +113,9 @@ export const data = [
     categories: ['Restaurant', 'Fastfood Center', 'Snacks Corner'],
   },
 ];
+
+
+
+
+
+
