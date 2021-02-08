@@ -118,7 +118,7 @@
                 <Modal animationType="fade" visible={this.state.isModalVisible} onRequestClose={() => this.setModalVisible(false)}>
                     <View style={styles.centeredView}>
                         <View style={styles.modalView}>
-                            <Text style={{fontSize:28, fontWeight:'bold', color:'#ff5722',margin:10}}>{this.state.modalTitle}</Text>
+                            <Text style={{fontSize:30, fontWeight:'bold', color:'#ff5722',margin:10}}>{this.state.modalTitle}</Text>
 
                                 <ScrollView>
                                 {this.state.modalTitle == 'PRO Service' && (
@@ -174,7 +174,61 @@
                                         
                                     </View> 
                                 )}
-                                
+
+                                {this.state.modalTitle == 'Sweet Corn' && (
+                                    
+                                    <View style={{flexDirection: 'column', flex:1}}>
+                                        <Text style={styles.modalText}>We Trade sell and market local and imported Sweet Corn, we also have the lowest price in the market, our company leading trading in the field of agricultural products.
+                                        </Text>  
+                                        <Text style={styles.modalText}>{'\u2705'} All kinds of Fruit Items.</Text>
+                                        <Text style={styles.modalText}>{'\u2705'} All kinds of Vegetable Items</Text>
+                                        <Text style={styles.modalText}>{'\u2705'} All kinds of Frozen Items</Text>
+                                        <Text style={styles.modalText}> We provide a realistic and alternative competitive commercial solution for National and Local Independent Food service companies in a fragmented and constantly changing market.
+                                        </Text> 
+                                        <Text style={styles.modalText}>We bring all the benefits and the expertise of sourcing locally on a National scale, combined with the advantages of a flexible service proposition.We have an effective and efficient supply chain with a comprehensive range of products, whilst offering all customers the ease of a central point of contact for all their core, everyday essential products.</Text>
+                                       
+                                    </View> 
+                                )}
+
+                                {this.state.modalTitle == 'Shamseen Bakery Group' && (
+                                    
+                                    <View style={{flexDirection: 'column', flex:1}}>
+                                        <Text style={styles.modalText}>Shamseen Bakery is one of the leading Group in the field of baking, processing sweets of all kinds and processing pancakes, pizza and Almnakish all kinds. The details of all the embossing processes are also marked with each other to a large extent, as follows:</Text>  
+
+                                        <Text style={styles.modalText}>The contract for the supply of healthy meals from 120 public schools in the United Arab Emirates -And managing its canteens professionally and distinctively</Text>
+                                    </View> 
+                                )}
+
+                                {this.state.modalTitle == 'Dune Sand & Aggregate' && (
+                                    
+                                    <View style={{flexDirection: 'column', flex:1}}>
+                                        <Text style={styles.modalText}>Dune sand is a valuable aggregate material used in a wide range of applications, including construction and manufacturing. In Dubai and the UAE, where industrial activities are booming, there is a significant demand for high-quality dune sand aggregates. For businesses and companies looking for reputable dune sand suppliers in Dubai, Al Sumood is the name you can bank on.</Text>  
+
+                                        <Text style={styles.modalText}>Sand acquired from dunes is commonly used in foundries to make moulds and cores. It is the ideal material to be used in a foundry as it contains the following characteristics:</Text>
+                                        <Text style={styles.modalText}>{'\u2705'} It is able to withstand extremely high temperatures, ranging from 1,300 to 1,700 degrees Celsius.</Text>
+                                        <Text style={styles.modalText}>{'\u2705'} It is able to resist tremendous pressure.</Text>
+                                        <Text style={styles.modalText}>{'\u2705'} It allows gasses to pass through. It comprises properties that allow it to produce smooth casting and prevent it from reacting with metal.</Text>
+                                    </View> 
+                                )}    
+
+                                {this.state.modalTitle == 'Logistics Only For GCC' && (
+                                    
+                                    <View style={{flexDirection: 'column', flex:1}}>
+                                        <Text style={styles.modalText}>ALSUMOOD GENERAL TRANSPORT is one of the best transports, Customs Clearance and aggregate supplier company in Middle East. “Al Sumood General Transport”, a proud member company of the Al-Sumood group UAE, was incorporated in January 1999. Since its inception, the company has earned a reputation of providing innovative, reliable and cost efficient remedies to the contemporary gulf business world. The company started its operations seventeen years ago with only a few trailers and an unmatched devotion towards transportation business and today after all these years of sheer hard work and full scale dedication.</Text>  
+
+                                        <Text style={styles.modalText}>We enjoy owning one hundred twenty seven (127) trailers and a big happy customer base spread all over gulf region. Our in-house Customs Clearance department is also an active branch with specialists of the field ensuring flawless and well on time clearance of our customers’ goods. Our mission is to meet rather exceed the expectations of our customers by providing unmatched, one window services of supplying aggregate, transportation and Clearance with best competitive rates as an augmented benefit. It is due to this high level of customer satisfaction that Al Sumood General Transport effected 30,000 shipments last year. We believe there is still a long way to go.</Text>
+                                    </View> 
+                                )} 
+
+                                {this.state.modalTitle == 'Spare Parts (KSA)' && (
+                                    
+                                    <View style={{flexDirection: 'column', flex:1}}>
+                                        <Text style={styles.modalText}>We provide a wide range of auto spare parts of world renowned brands meeting the highest quality.</Text>  
+
+                                        <Text style={styles.modalText}>We provide a wide range of auto spare parts of world renowned brands meeting the highest quality of OEM products, exclusively imported from Japan, Korea, Taiwan, Malaysia, and Thailand. We cater to meet the parts requirement of Toyota, Nissan, Mitsubishi, Mazda, Daihatsu, Suzuki, Subaru, Isuzu, Hyundai and Kia.</Text>
+                                        <Text style={styles.modalText}>Our primary objective is to provide our customers with the best possible solutions and maintain our reputation as an ideal importer and distributor in the automobile industry in Saudi Arabia. We strive to meet and exceed customer expectations in terms of quality and performance.</Text>  
+                                    </View> 
+                                )}             
                                 </ScrollView>
                         
                         </View>
