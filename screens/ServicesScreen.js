@@ -111,8 +111,12 @@
                         size={25}
                         //color={colors.text}
                         //backgroundColor={colors.background}
-                        onPress={() => props.navigation.openDrawer()}
+                        onPress={() => this.props.navigation.openDrawer()}
                     /> 
+                </View>
+
+                <View style={{flex:1, flexDirection:'row', justifyContent:'center', padding:10}}>
+                    <Text style={{fontSize:34, fontWeight:'bold', color:'#ff5722'}}>Our Services</Text>
                 </View>
 
                 <Modal animationType="fade" visible={this.state.isModalVisible} onRequestClose={() => this.setModalVisible(false)}>
@@ -317,7 +321,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       width: '90%',
       alignSelf: 'center',
-      marginTop: 40,
+      marginTop: 20,
       marginBottom: 10,
     },
     categoryBtn: {
