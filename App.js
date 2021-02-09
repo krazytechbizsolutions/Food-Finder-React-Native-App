@@ -144,14 +144,18 @@ const App = () => {
   useEffect(() => {
     setTimeout(async() => {
       // setIsLoading(false);
+
+      AsyncStorage.removeItem('userToken');
       let userToken;
-      userToken = null;
-      try {
+      userToken = 'token12345';
+     /*  try {
         userToken = await AsyncStorage.getItem('userToken');
       } catch(e) {
         console.log(e);
-      }
-      // console.log('user token: ', userToken);
+      } */
+      console.log('#################');
+      console.log('user token: ', userToken);
+      console.log('#################');
       dispatch({ type: 'RETRIEVE_TOKEN', token: userToken });
     }, 1000);
   }, []);

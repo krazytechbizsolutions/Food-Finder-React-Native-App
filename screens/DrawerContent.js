@@ -136,7 +136,7 @@ export function DrawerContent(props) {
                     </Drawer.Section>
                 </View>
             </DrawerContentScrollView>
-            <Drawer.Section style={styles.bottomDrawerSection}>
+            {/* <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem 
                     icon={({color, size}) => (
                         <Icon 
@@ -148,7 +148,7 @@ export function DrawerContent(props) {
                     label="Sign Out"
                     onPress={() => {signOut()}}
                 />
-            </Drawer.Section>
+            </Drawer.Section> */}
         </View>
     );
 }

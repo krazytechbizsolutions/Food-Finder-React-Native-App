@@ -16,6 +16,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import StarRating from '../components/StarRating';
+import { foods } from '../model/foods';
 
 const HomeScreen = ({navigation}) => {
   const theme = useTheme();
@@ -137,54 +138,24 @@ const HomeScreen = ({navigation}) => {
           }}>
           Recently Viewed
         </Text>
-        <View style={styles.card}>
-          <View style={styles.cardImgWrapper}>
-            <Image
-              source={require('../assets/banners/arb1.jpg')}
-              resizeMode="cover"
-              style={styles.cardImg}
-            />
+
+        {foods.map((t, index) => (
+          <View style={styles.card}>
+            <View style={styles.cardImgWrapper}>
+              <Image
+                source={t.image}
+                resizeMode="cover"
+                style={styles.cardImg}
+              />
+            </View>
+            <View style={styles.cardInfo}>
+              <Text style={styles.cardTitle}>{t.name}</Text>
+              <StarRating ratings={4} reviews={99} />
+              <Text style={styles.cardDetails}>{t.ingredients}</Text>
+            </View>
           </View>
-          <View style={styles.cardInfo}>
-            <Text style={styles.cardTitle}>Amazing Food Place</Text>
-            <StarRating ratings={4} reviews={99} />
-            <Text style={styles.cardDetails}>
-              Amazing description for this amazing place
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.cardImgWrapper}>
-            <Image
-              source={require('../assets/banners/arb2.jpg')}
-              resizeMode="cover"
-              style={styles.cardImg}
-            />
-          </View>
-          <View style={styles.cardInfo}>
-            <Text style={styles.cardTitle}>Amazing Food Place</Text>
-            <StarRating ratings={4} reviews={99} />
-            <Text style={styles.cardDetails}>
-              Amazing description for this amazing place
-            </Text>
-          </View>
-        </View>
-        <View style={styles.card}>
-          <View style={styles.cardImgWrapper}>
-            <Image
-              source={require('../assets/banners/arb3.jpg')}
-              resizeMode="cover"
-              style={styles.cardImg}
-            />
-          </View>
-          <View style={styles.cardInfo}>
-            <Text style={styles.cardTitle}>Amazing Food Place</Text>
-            <StarRating ratings={4} reviews={99} />
-            <Text style={styles.cardDetails}>
-              Amazing description for this amazing place
-            </Text>
-          </View>
-        </View>
+        ))}
+        
       </View>
     </ScrollView>
   );
@@ -253,7 +224,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   card: {
-    height: 100,
+    height: 110,
     marginVertical: 10,
     flexDirection: 'row',
     shadowColor: '#999',
@@ -275,7 +246,7 @@ const styles = StyleSheet.create({
   },
   cardInfo: {
     flex: 2,
-    padding: 10,
+    padding: 20,
     borderColor: '#ccc',
     borderWidth: 1,
     borderLeftWidth: 0,
