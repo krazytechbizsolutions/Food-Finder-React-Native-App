@@ -106,10 +106,10 @@ const CardItemDetails = ({route}) => {
             flex: 1,
           }}>
           <Text style={{fontWeight: 'bold', fontSize: 16}}>{item.name}</Text>
-          <Text style={{fontSize: 13, color: COLORS.grey}}>
+          {/* <Text style={{fontSize: 13, color: COLORS.grey}}>
             {item.ingredients}
-          </Text>
-          <Text style={{fontSize: 17, fontWeight: 'bold'}}>${item.price}</Text>
+          </Text> */}
+          <Text style={{fontSize: 17, fontWeight: 'bold',color: COLORS.grey}}>AED {item.price}</Text>
         </View>
         <View style={{marginRight: 20, alignItems: 'center'}}>
           {/* <Text style={{fontWeight: 'bold', fontSize: 18}}>3</Text> */}
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   actionBtn: {
-    width: 80,
+    width: 60,
     height: 30,
     backgroundColor: COLORS.primary,
     borderRadius: 10,
@@ -238,7 +238,9 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   container: {
-    flex: 1,
+    flex: 1, 
+    width: '100%',
+    alignSelf: 'center'
   },
   image: {
     height: MAX_HEIGHT,

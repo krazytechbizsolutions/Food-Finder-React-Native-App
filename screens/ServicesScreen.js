@@ -306,7 +306,9 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	}, 
     container: {
-      flex: 1,
+        flex: 1, 
+        width: '100%',
+        alignSelf: 'center'
     },
     sliderContainer: {
       height: 200,
