@@ -81,7 +81,7 @@ const HomeScreen = ({navigation}) => {
             navigation.navigate('CardListScreen', {title: 'Restaurant'})
           }>
           <View style={styles.categoryIcon}>
-            <Ionicons name="ios-restaurant" size={35} color="#FF6347" />
+            <Ionicons name="ios-restaurant" size={45} color="#FF6347" />
           </View>
           <Text style={styles.categoryBtnTxt}>Restaurant</Text>
         </TouchableOpacity>
@@ -93,7 +93,7 @@ const HomeScreen = ({navigation}) => {
           <View style={styles.categoryIcon}>
             <MaterialCommunityIcons
               name="food-fork-drink"
-              size={35}
+              size={45}
               color="#FF6347"
             />
           </View>
@@ -101,7 +101,7 @@ const HomeScreen = ({navigation}) => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.categoryBtn} onPress={() => navigation.navigate('ServicesScreen')}>
           <View style={styles.categoryIcon}>
-            <MaterialCommunityIcons name="food" size={35} color="#FF6347" />
+            <Ionicons name="thumbs-up" size={45} color="#FF6347" />
           </View>
           <Text style={styles.categoryBtnTxt}>Al Sumood Group</Text>
         </TouchableOpacity>

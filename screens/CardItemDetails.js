@@ -18,37 +18,111 @@ import * as Animatable from 'react-native-animatable';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { bakerydata } from '../model/bakerydata';
 
 const MIN_HEIGHT = Platform.OS === 'ios' ? 90 : 55;
 const MAX_HEIGHT = 350;
 const foods = [
   {
     id: '1',
-    name: 'Meat Pizza',
-    ingredients: 'Mixed Pizza',
+    name: 'Manousheh',
+    ingredients: 'Pizza Of Dubai',
     price: '8.30',
-    image: require('../assets/banners/food-banner1.jpg'),
+    image: require('../assets/banners/item1.jpg'),
   },
   {
     id: '2',
-    name: 'Cheese Pizza',
-    ingredients: 'Cheese Pizza',
+    name: 'Chelo Kebab',
+    ingredients: 'A Heavenly Taste',
     price: '7.10',
-    image: require('../assets/banners/food-banner2.jpg'),
+    image: require('../assets/banners/item2.jpg'),
   },
   {
     id: '3',
-    name: 'Chicken Burger',
-    ingredients: 'Fried Chicken',
+    name: 'Al Harees',
+    ingredients: 'Taste The Tradition',
     price: '5.10',
-    image: require('../assets/banners/food-banner3.jpg'),
+    image: require('../assets/banners/item3.jpg'),
   },
   {
     id: '4',
-    name: 'Sushi Makizushi',
-    ingredients: 'Salmon Meat',
+    name: 'Al Machboos',
+    ingredients: 'Surprisingly Delicious',
     price: '9.55',
-    image: require('../assets/banners/food-banner4.jpg'),
+    image: require('../assets/banners/item4.jpg'),
+  },
+  {
+    id: '5',
+    name: 'Mandi',
+    ingredients: 'A Rendezvous With Tradition',
+    price: '9.55',
+    image: require('../assets/banners/item5.jpg'),
+  },
+  {
+    id: '6',
+    name: 'Oozie',
+    ingredients: 'Ramadan Special',
+    price: '9.55',
+    image: require('../assets/banners/item6.jpg'),
+  },
+  {
+    id: '7',
+    name: 'Tabbouleh',
+    ingredients: 'For Those Who Are Health Conscious',
+    price: '9.55',
+    image: require('../assets/banners/item7.jpg'),
+  },
+];
+
+const bakeryItem = [
+  {
+    id: '1',
+    name: 'Caketalk',
+    ingredients: 'Caketalk',
+    price: '8.30',
+    image: require('../assets/banners/cak1.png'),
+  },
+  {
+    id: '2',
+    name: 'Magnolia',
+    ingredients: 'Moist and perfect!',
+    price: '7.10',
+    image: require('../assets/banners/cak2.png'),
+  },
+  {
+    id: '3',
+    name: 'Hummingbird',
+    ingredients: 'Cupcakes and cakes',
+    price: '5.10',
+    image: require('../assets/banners/cak3.png'),
+  },
+  {
+    id: '4',
+    name: 'La Serre',
+    ingredients: 'Priced at slightly',
+    price: '9.55',
+    image: require('../assets/banners/cak4.png'),
+  },
+  {
+    id: '5',
+    name: 'French Bakery',
+    ingredients: 'French Bakery',
+    price: '9.55',
+    image: require('../assets/banners/cak5.png'),
+  },
+  {
+    id: '6',
+    name: 'Bakemart',
+    ingredients: 'Bakemart Gourmet',
+    price: '9.55',
+    image: require('../assets/banners/cak6.png'),
+  },
+  {
+    id: '7',
+    name: 'Project Cupcake',
+    ingredients: 'Project Cupcake',
+    price: '9.55',
+    image: require('../assets/banners/cak7.png'),
   },
 ];
 const COLORS = {
@@ -61,13 +135,18 @@ const COLORS = {
 };
 
 const CardItemDetails = ({route}) => {
+
   const itemData = route.params.itemData;
+  const listType = route.params.listType;
   const navTitleView = useRef(null);
+
+
+  const renderItems = (listType == 'Bakery') ? bakeryItem : foods;
 
   const CartCard = ({item}) => {
     return (
       <View style={styles.cartCard}>
-        <Image source={item.image} style={{height: 80, width: 80}} />
+        <Image source={item.image} style={{height: 100, width: 90}} />
         <View
           style={{
             height: 100,
@@ -130,7 +209,7 @@ const CardItemDetails = ({route}) => {
           <FlatList
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{paddingBottom: 80}}
-            data={foods}
+            data={renderItems}
             renderItem={({item}) => <CartCard item={item} />}
             ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
           />
@@ -187,7 +266,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   cartCard: {
-    height: 100,
+    height: 120,
     elevation: 15,
     borderRadius: 10,
     backgroundColor: COLORS.white,
@@ -260,11 +339,13 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'center',
     alignItems: 'center',
+   // backgroundColor:'#354e466e'
   },
   imageTitle: {
     color: 'white',
     backgroundColor: 'transparent',
     fontSize: 24,
+    fontWeight:'bold'
   },
   navTitleView: {
     height: MIN_HEIGHT,

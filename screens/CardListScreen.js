@@ -10,7 +10,7 @@ const CardListScreen = ({navigation, route}) => {
         return (
             <Card 
                 itemData={item}
-                onPress={()=> navigation.navigate('CardItemDetails', {itemData: item})}
+                onPress={()=> navigation.navigate('CardItemDetails', {itemData: item, listType : route.params.title})}
             />
         );
     };
