@@ -7,7 +7,9 @@ import {
   Dimensions,
   StatusBar,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
 import HeaderImageScrollView, {
   TriggeringView,
 } from 'react-native-image-header-scroll-view';
@@ -15,13 +17,79 @@ import HeaderImageScrollView, {
 import * as Animatable from 'react-native-animatable';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const MIN_HEIGHT = Platform.OS === 'ios' ? 90 : 55;
 const MAX_HEIGHT = 350;
+const foods = [
+  {
+    id: '1',
+    name: 'Meat Pizza',
+    ingredients: 'Mixed Pizza',
+    price: '8.30',
+    image: require('../assets/banners/food-banner1.jpg'),
+  },
+  {
+    id: '2',
+    name: 'Cheese Pizza',
+    ingredients: 'Cheese Pizza',
+    price: '7.10',
+    image: require('../assets/banners/food-banner2.jpg'),
+  },
+  {
+    id: '3',
+    name: 'Chicken Burger',
+    ingredients: 'Fried Chicken',
+    price: '5.10',
+    image: require('../assets/banners/food-banner3.jpg'),
+  },
+  {
+    id: '4',
+    name: 'Sushi Makizushi',
+    ingredients: 'Salmon Meat',
+    price: '9.55',
+    image: require('../assets/banners/food-banner4.jpg'),
+  },
+];
+const COLORS = {
+  white: '#FFF',
+  dark: '#000',
+  primary: '#ff5722',
+  secondary: '#fedac5',
+  light: '#E5E5E5',
+  grey: '#908e8c',
+};
 
 const CardItemDetails = ({route}) => {
   const itemData = route.params.itemData;
   const navTitleView = useRef(null);
+
+  const CartCard = ({item}) => {
+    return (
+      <View style={styles.cartCard}>
+        <Image source={item.image} style={{height: 80, width: 80}} />
+        <View
+          style={{
+            height: 100,
+            marginLeft: 10,
+            paddingVertical: 20,
+            flex: 1,
+          }}>
+          <Text style={{fontWeight: 'bold', fontSize: 16}}>{item.name}</Text>
+          <Text style={{fontSize: 13, color: COLORS.grey}}>
+            {item.ingredients}
+          </Text>
+          <Text style={{fontSize: 17, fontWeight: 'bold'}}>${item.price}</Text>
+        </View>
+        <View style={{marginRight: 20, alignItems: 'center'}}>
+          {/* <Text style={{fontWeight: 'bold', fontSize: 18}}>3</Text> */}
+          <View style={styles.actionBtn}>
+            <Text style={{color:'white', fontSize:18, fontWeight:'bold', padding:3}}>ADD</Text>
+          </View>
+        </View>
+      </View>
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -58,10 +126,17 @@ const CardItemDetails = ({route}) => {
           </View>
         </TriggeringView>
         <View style={[styles.section, styles.sectionLarge]}>
-          <Text style={styles.sectionContent}>{itemData.description}</Text>
+          {/* <Text style={styles.sectionContent}>{itemData.description}</Text> */}
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{paddingBottom: 80}}
+            data={foods}
+            renderItem={({item}) => <CartCard item={item} />}
+            ListFooterComponentStyle={{paddingHorizontal: 20, marginTop: 20}}
+          />
         </View>
 
-        <View style={styles.section}>
+        {/* <View style={styles.section}>
           <View style={styles.categories}>
             {itemData.categories.map((category, index) => (
               <View style={styles.categoryContainer} key={index}>
@@ -71,8 +146,8 @@ const CardItemDetails = ({route}) => {
             ))}
           </View>
         </View>
-
-        <View style={[styles.section, {height: 250}]}>
+ 
+         <View style={[styles.section, {height: 250}]}>
           <MapView
             provider={PROVIDER_GOOGLE}
             style={{flex: 1}}
@@ -87,7 +162,8 @@ const CardItemDetails = ({route}) => {
               image={require('../assets/map_marker.png')}
             />
           </MapView>
-        </View>
+        </View> 
+        */}
       </HeaderImageScrollView>
     </View>
   );
@@ -96,6 +172,41 @@ const CardItemDetails = ({route}) => {
 export default CardItemDetails;
 
 const styles = StyleSheet.create({
+  title: {color: COLORS.white, fontWeight: 'bold', fontSize: 18},
+  btnContainer: {
+    backgroundColor: COLORS.primary,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  header: {
+    paddingVertical: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 20,
+  },
+  cartCard: {
+    height: 100,
+    elevation: 15,
+    borderRadius: 10,
+    backgroundColor: COLORS.white,
+    marginVertical: 10,
+    marginHorizontal: 20,
+    paddingHorizontal: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  actionBtn: {
+    width: 80,
+    height: 30,
+    backgroundColor: COLORS.primary,
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
   container: {
     flex: 1,
   },
