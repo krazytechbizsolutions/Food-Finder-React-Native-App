@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint .",
     "clean-build": "cd android && gradlew clean",
-    "release": "cd android && gradlew assembleRelease"
+    "release": "cd android && gradlew assembleRelease",
+    "debug-release": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && gradlew assembleDebug && cd .."
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.9.0",
