@@ -60,7 +60,7 @@ const MainTabScreen = () => (
         ),
       }}
     />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="Explore"
       component={ExploreScreen}
       options={{
@@ -70,7 +70,7 @@ const MainTabScreen = () => (
           <Icon name="ios-aperture" color={color} size={26} />
         ),
       }}
-    />
+    /> */}
   </Tab.Navigator>
 );
 
@@ -95,7 +95,7 @@ const HomeStackScreen = ({navigation}) => {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'FoodFinder',
+          title: 'Alsumood Group',
           headerLeft: () => (
             <View style={{marginLeft: 10}}>
               <Icon.Button
